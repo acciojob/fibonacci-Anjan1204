@@ -1,25 +1,26 @@
 function fibonacci(num) {
+  if (num === 0) return 0;
   if (num === 1) return 0;
   if (num === 2) return 1;
 
-  let a = 0, b = 1;
+  let a = 0, b = 1, fib = 1;
   for (let i = 3; i <= num; i++) {
-    let next = a + b;
+    fib = a + b;
     a = b;
-    b = next;
+    b = fib;
   }
-  return b;
+  return fib;
 }
 
 function showFibonacci() {
-  const input = document.getElementById("fibInput").value;
-  const num = parseInt(input);
+  const input = document.getElementById("inputN").value;
+  const n = parseInt(input);
 
-  if (isNaN(num) || num < 1 || num > 50) {
-    document.getElementById("result").textContent = "Please enter a valid number between 1 and 50.";
+  if (isNaN(n) || n < 0 || n > 50) {
+    document.getElementById("result").innerText = "Please enter a valid number between 0 and 50.";
     return;
   }
 
-  const fibValue = fibonacci(num);
-  document.getElementById("result").textContent = `Fibonacci(${num}) = ${fibValue}`;
+  const fib = fibonacci(n);
+  document.getElementById("result").innerText = `Fibonacci(${n}) = ${fib}`;
 }

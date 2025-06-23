@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Fibonacci Finder</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="container">
-    <h2>Find nth Fibonacci Number</h2>
-    <input type="number" id="fibInput" min="1" max="50" placeholder="Enter a number (1 - 50)" />
-    <button onclick="showFibonacci()">Get Fibonacci</button>
-    <p id="result">Result will appear here</p>
-  </div>
+  <h1>Find Nth Fibonacci Number</h1>
+  <label for="inputN">Enter N (0 ≤ N ≤ 50): </label>
+  <input type="number" id="inputN" min="0" max="50" />
+  <button onclick="showFibonacci()">Calculate</button>
+
+  <p id="result"></p>
 
   <script src="script.js"></script>
 </body>
